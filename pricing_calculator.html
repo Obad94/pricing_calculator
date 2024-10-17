@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EzeHome Pricing Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .calculator {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .pricing-table-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .pricing-table {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: 100%;
+            max-width: 310px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .pricing-table:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .pricing-table h4 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .pricing-details {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .pricing-details li {
+            list-style: none;
+            padding: 8px 0;
+        }
+        .price {
+            font-size: 26px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .pricing-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .pricing-button:hover {
+            background-color: #0056b3;
+        }
+        input {
+            width: 100%; /* Ensures the input field takes up the full width of the cell */
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            .pricing-table {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <h2 style="text-align: center;">EzeHome Pricing Calculator</h2>
+
+    <div class="pricing-table-container">
+
+        <!-- Base Pricing -->
+        <div class="pricing-table">
+            <h4>Base Pricing</h4>
+            <ul class="pricing-details">
+                <li>1-100 units:<br> <span class="price">&euro; 300/property/month</span></li>
+                <li>101-500 units:<br> <span class="price">&euro; 500/property/month</span></li>
+                <li>501-1,000 units:<br> <span class="price">&euro; 1,000/property/month</span></li>
+                <li>1,001+ units:<br> <span class="price">&euro; 1,500/property/month</span></li>
+            </ul>
+            <a href="#" class="pricing-button">Get Started</a>
+        </div>
+    
+        <!-- Unit Pricing -->
+        <div class="pricing-table">
+            <h4>Unit Pricing</h4>
+            <ul class="pricing-details">
+                <li>1-100 units:<br> <span class="price">&euro; 5/unit/month</span></li>
+                <li>101-500 units:<br> <span class="price">&euro; 4/unit/month</span></li>
+                <li>501-1,000 units:<br> <span class="price">&euro; 3/unit/month</span></li>
+                <li>1,001+ units:<br> <span class="price">&euro; 2.50/unit/month</span></li>
+            </ul>
+            <a href="#" class="pricing-button">Get Started</a>
+        </div>
+    
+        <!-- Basic IoT Devices Pricing -->
+        <div class="pricing-table">
+            <h4>Basic IoT Devices</h4>
+            <ul class="pricing-details">
+                <li>1-100 devices:<br> <span class="price">&euro; 2.50/device/month</span></li>
+                <li>101-500 devices:<br> <span class="price">&euro; 2/device/month</span></li>
+                <li>501-1,000 devices:<br> <span class="price">&euro; 1.50/device/month</span></li>
+                <li>1,001+ devices:<br> <span class="price">&euro; 1/device/month</span></li>
+            </ul>
+            <a href="#" class="pricing-button">Get Started</a>
+        </div>
+    
+        <!-- Advanced IoT Devices Pricing -->
+        <div class="pricing-table">
+            <h4>Advanced IoT Devices</h4>
+            <ul class="pricing-details">
+                <li>1-100 devices:<br> <span class="price">&euro; 4/device/month</span></li>
+                <li>101-500 devices:<br> <span class="price">&euro; 3/device/month</span></li>
+                <li>501-1,000 devices:<br> <span class="price">&euro; 2.5/device/month</span></li>
+                <li>1,001+ devices:<br> <span class="price">&euro; 1.5/device/month</span></li>
+            </ul>
+            <a href="#" class="pricing-button">Get Started</a>
+        </div>
+    
+    </div>
+    
+    
+<br><br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price per Unit/Device</th>
+            <th>Monthly Cost</th>
+            <th>Base Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="propertyTable">
+        <!-- Preloaded Property -->
+        <tr id="property-row-1-units">
+            <td rowspan="3">Property 1</td>
+            <td>Units</td>
+            <td><input type="number" id="units-1" min="0" value="0" placeholder="Enter number of units"></td>
+            <td id="unitRate-1">-</td>
+            <td id="unitCost-1">0.00 GBP/EUR</td>
+            <td id="basePrice-1" rowspan="3">-</td>
+            <td rowspan="3"><button onclick="removeProperty(1)">Remove</button></td>
+        </tr>
+        <tr id="property-row-1-basic">
+            <td>Basic IoT Devices</td>
+            <td><input type="number" id="basicDevices-1" min="0" value="0" placeholder="Enter number of basic devices"></td>
+            <td id="basicRate-1">-</td>
+            <td id="basicCost-1">0.00 GBP/EUR</td>
+        </tr>
+        <tr id="property-row-1-advanced">
+            <td>Advanced IoT Devices</td>
+            <td><input type="number" id="advancedDevices-1" min="0" value="0" placeholder="Enter number of advanced devices"></td>
+            <td id="advancedRate-1">-</td>
+            <td id="advancedCost-1">0.00 GBP/EUR</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="display: flex; justify-content: center;">
+    <button onclick="addProperty()">Add Property</button>
+</div>
+
+<br><br>
+
+<label for="whitelabelingCost">White-Label Setup Fee (GBP/EUR):</label>
+<input type="number" id="whitelabelingCost" min="0" value="10000">
+
+<div style="display: flex; justify-content: center;">
+    <button onclick="calculateTotal()">Calculate Total Pricing</button>
+</div>
+
+<br><br>
+
+<div class="result" id="result"></div>
+</div>
+
+<script>
+let propertyCount = 1; // Start with 1 property already preloaded
+
+function addProperty() {
+    propertyCount++;
+    const rowHTML = `
+        <tr id="property-row-${propertyCount}-units">
+            <td rowspan="3">Property ${propertyCount}</td>
+            <td>Units</td>
+            <td><input type="number" id="units-${propertyCount}" min="0" value="0" placeholder="Enter number of units"></td>
+            <td id="unitRate-${propertyCount}">-</td>
+            <td id="unitCost-${propertyCount}">0.00 GBP/EUR</td>
+            <td id="basePrice-${propertyCount}" rowspan="3">-</td>
+            <td rowspan="3"><button onclick="removeProperty(${propertyCount})">Remove</button></td>
+        </tr>
+        <tr id="property-row-${propertyCount}-basic">
+            <td>Basic IoT Devices</td>
+            <td><input type="number" id="basicDevices-${propertyCount}" min="0" value="0" placeholder="Enter number of basic devices"></td>
+            <td id="basicRate-${propertyCount}">-</td>
+            <td id="basicCost-${propertyCount}">0.00 GBP/EUR</td>
+        </tr>
+        <tr id="property-row-${propertyCount}-advanced">
+            <td>Advanced IoT Devices</td>
+            <td><input type="number" id="advancedDevices-${propertyCount}" min="0" value="0" placeholder="Enter number of advanced devices"></td>
+            <td id="advancedRate-${propertyCount}">-</td>
+            <td id="advancedCost-${propertyCount}">0.00 GBP/EUR</td>
+        </tr>
+    `;
+    document.getElementById('propertyTable').insertAdjacentHTML('beforeend', rowHTML);
+    calculateTotal(); // Automatically update totals when a new property is added
+}
+
+function removeProperty(propertyId) {
+    document.getElementById(`property-row-${propertyId}-units`).remove();
+    document.getElementById(`property-row-${propertyId}-basic`).remove();
+    document.getElementById(`property-row-${propertyId}-advanced`).remove();
+    calculateTotal(); // Automatically update totals after a property is removed
+}
+
+// Function to return pricing per unit based on total number of units
+function getUnitPricing(numUnits) {
+    if (numUnits <= 100) return 5.00;
+    else if (numUnits <= 500) return 4.00;
+    else if (numUnits <= 1000) return 3.00;
+    else return 2.50;
+}
+
+// Function to return base price for a property based on total number of units
+function getBasePrice(numUnits) {
+    if (numUnits <= 100) return 300.00;
+    else if (numUnits <= 500) return 500.00;
+    else if (numUnits <= 1000) return 1000.00;
+    else return 1500.00;
+}
+
+// Function to return pricing per device based on total number of devices
+function getDevicePricing(numDevices, isBasic) {
+    if (isBasic) {
+        if (numDevices <= 100) return 2.50;
+        else if (numDevices <= 500) return 2.00;
+        else if (numDevices <= 1000) return 1.50;
+        else return 1.00;
+    } else {
+        if (numDevices <= 100) return 4.00;
+        else if (numDevices <= 500) return 3.00;
+        else if (numDevices <= 1000) return 2.50;
+        else return 1.50;
+    }
+}
+
+// Function to calculate total cost for all properties
+function calculateTotal() {
+    let totalMonthlyCost = 0;
+    let totalAnnualCost = 0;
+    let totalAnnualCostWL = 0;
+
+    for (let i = 1; i <= propertyCount; i++) {
+        const unitsInput = document.getElementById(`units-${i}`);
+        const basicDevicesInput = document.getElementById(`basicDevices-${i}`);
+        const advancedDevicesInput = document.getElementById(`advancedDevices-${i}`);
+
+        // Check if property exists before calculating
+        if (!unitsInput || !basicDevicesInput || !advancedDevicesInput) continue;
+
+        const units = parseInt(unitsInput.value) || 0;
+        const basicDevices = parseInt(basicDevicesInput.value) || 0;
+        const advancedDevices = parseInt(advancedDevicesInput.value) || 0;
+
+        // Skip base price calculation if no units are entered
+        if (units > 0) {
+            const basePrice = getBasePrice(units);
+            document.getElementById(`basePrice-${i}`).innerText = basePrice.toFixed(2) + " GBP/EUR";
+            totalMonthlyCost += basePrice;
+            totalAnnualCost += basePrice * 12;
+        } else {
+            document.getElementById(`basePrice-${i}`).innerText = "-";
+        }
+
+        // Calculate the cost per unit and display the rate
+        const unitRate = getUnitPricing(units);
+        document.getElementById(`unitRate-${i}`).innerText = unitRate.toFixed(2) + " GBP/EUR";
+
+        // Calculate the cost per device and display the rate
+        const basicDeviceRate = getDevicePricing(basicDevices, true);
+        const advancedDeviceRate = getDevicePricing(advancedDevices, false);
+        document.getElementById(`basicRate-${i}`).innerText = basicDeviceRate.toFixed(2) + " GBP/EUR";
+        document.getElementById(`advancedRate-${i}`).innerText = advancedDeviceRate.toFixed(2) + " GBP/EUR";
+
+        // Calculate monthly cost for units and devices
+        const unitCost = units * unitRate;
+        const basicDeviceCost = basicDevices * basicDeviceRate;
+        const advancedDeviceCost = advancedDevices * advancedDeviceRate;
+
+        // Update the table with costs
+        document.getElementById(`unitCost-${i}`).innerText = unitCost.toFixed(2) + " GBP/EUR";
+        document.getElementById(`basicCost-${i}`).innerText = basicDeviceCost.toFixed(2) + " GBP/EUR";
+        document.getElementById(`advancedCost-${i}`).innerText = advancedDeviceCost.toFixed(2) + " GBP/EUR";
+
+        // Calculate the total cost for this property
+        const totalPropertyCost = unitCost + basicDeviceCost + advancedDeviceCost;
+
+        // Accumulate total costs
+        totalMonthlyCost += totalPropertyCost;
+        totalAnnualCost += totalPropertyCost * 12;
+    }
+
+    // Add whitelabeling cost
+    const whitelabelingCost = parseFloat(document.getElementById('whitelabelingCost').value);
+    totalAnnualCostWL += whitelabelingCost + totalAnnualCost;
+
+    // Display total costs
+    document.getElementById('result').innerHTML = `
+        <p>Total Monthly Cost: <strong>${totalMonthlyCost.toFixed(2)} GBP/EUR</strong></p>
+        <p>Total Annual Cost (Excluding White-Labeling): <strong>${totalAnnualCost.toFixed(2)} GBP/EUR</strong></p>
+        <p>Total Annual Cost (Including White-Labeling): <strong>${totalAnnualCostWL.toFixed(2)} GBP/EUR</strong></p>
+    `;
+}
+
+// Auto calculate totals on page load
+window.onload = function() {
+    calculateTotal();
+};
+</script>
+
+</body>
+</html>
